@@ -6,9 +6,9 @@
     "apps/*"
   ],
   "scripts": {
-    "dev": "concurrently \"npm run dev --workspace @pocket/api\" \"npm run dev --workspace @pocket/web\"",
-    "dev:web": "npm run dev --workspace @pocket/web",
-    "dev:api": "npm run dev --workspace @pocket/api",
+    "dev": "node api.js && concurrently \"npm run dev --workspace @pocket/api\" \"npm run dev --workspace @pocket/web\"",
+    "dev:web": "node api.js && npm run dev --workspace @pocket/web",
+    "dev:api": "node api.js && npm run dev --workspace @pocket/api",
     "db:local:start": "pg_ctl -D .postgres-local -l .postgres-local/server.log -o \"-p 5433\" start",
     "db:local:stop": "pg_ctl -D .postgres-local stop",
     "db:local:status": "pg_ctl -D .postgres-local status",

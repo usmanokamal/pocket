@@ -9,6 +9,4 @@ prisma/dev.db
 apps/web/.next
 apps/api/dist
 config.bat
-.env
-.env.*
 !.env.example
